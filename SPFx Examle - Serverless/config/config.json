@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "twitter-example-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/twitterExample/TwitterExampleWebPart.js",
+          "manifest": "./src/webparts/twitterExample/TwitterExampleWebPart.manifest.json"
+        }
+      ]
+    },
+    "demo-signal-r-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/demoSignalR/DemoSignalRWebPart.js",
+          "manifest": "./src/webparts/demoSignalR/DemoSignalRWebPart.manifest.json"
+        }
+      ]
+    },
+    "chat-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/chat/ChatWebPart.js",
+          "manifest": "./src/webparts/chat/ChatWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TwitterExampleWebPartStrings": "lib/webparts/twitterExample/loc/{locale}.js",
+    "DemoSignalRWebPartStrings": "lib/webparts/demoSignalR/loc/{locale}.js",
+    "ChatWebPartStrings": "lib/webparts/chat/loc/{locale}.js"
+  }
+}

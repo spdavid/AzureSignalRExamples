@@ -1,0 +1,12 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": false,
+    "environment": "spo",
+    "version": "1.9.0",
+    "libraryName": "sp-fx-examle-serverless",
+    "libraryId": "e58459a2-53fd-4570-a2f4-e8b55c5ff1fa",
+    "packageManager": "npm",
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
