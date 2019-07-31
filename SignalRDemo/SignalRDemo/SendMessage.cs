@@ -19,14 +19,11 @@ namespace SignalRDemo
             [SignalR(HubName = "AzureSignalRConnectionString")] IAsyncCollector<SignalRMessage> signalRMessages)
         {
 
-           
-
             return signalRMessages.AddAsync(
                 new SignalRMessage
                 {
                     Target = "newMessage",
-                    Arguments = new[] { message },
-                   
+                    Arguments = new[] { message }
                  
                 });
         }

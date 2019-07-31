@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace asp.net_example_default
 {
     public class Startup
@@ -27,6 +28,15 @@ namespace asp.net_example_default
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+        // add signalR Services
+        services.AddSignalR(
+            (o => {
+                o.EnableDetailedErrors = true;
+            })
+        ).AddAzureSignalR("signalR query string");
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +56,13 @@ namespace asp.net_example_default
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            // configure app
+            app.UseAzureSignalR(routes =>
+            {
+                routes.MapHub<SignalRHub>("/myhub");
+            
+            });
 
             app.UseMvc(routes =>
             {
